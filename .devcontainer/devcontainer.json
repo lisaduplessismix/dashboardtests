@@ -1,0 +1,27 @@
+{
+	"name": "MiX Dev Environment",
+	"dockerComposeFile": "./docker-compose.yml",
+	"service": "dev_container",
+	"shutdownAction": "stopCompose",
+	"settings": {
+		"python.defaultInterpreterPath": "/usr/bin/python",
+		"python.languageServer": "Pylance",
+		"python.linting.enabled": true,
+		"python.linting.pylintEnabled": true,
+		"python.linting.pylintPath": "/home/ubuntu/.local/bin/pylint",
+		"python.formatting.autopep8Path": "/home/ubuntu/.local/bin/autopep8",
+		"python.linting.flake8Path": "/home/ubuntu/.local/bin/flake8",
+		"python.linting.pycodestylePath": "/home/ubuntu/.local/bin/pycodestyle",
+		"python.linting.pydocstylePath": "/home/ubuntu/.local/bin/pydocstyle",
+		"python.testing.pytestEnabled": true
+	},
+	"extensions": [
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"xyz.local-history",
+		"ms-azuretools.vscode-docker",
+		"streetsidesoftware.code-spell-checker"
+	],
+	"remoteUser": "ubuntu",
+	"workspaceFolder": "/home/ubuntu/git/MiX.Testing.Selenium",
+}

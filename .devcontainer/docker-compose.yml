@@ -1,0 +1,27 @@
+version: "3.9"
+   
+services:
+  dev_container:
+    build:
+        context: ..
+        dockerfile: ./.devcontainer/Dockerfile
+    env_file:
+      - ./../.env
+    volumes:
+      - ~/.aws:/home/ubuntu/.aws
+      - ~/.ssh:/home/ubuntu/.ssh
+      - ../../:/home/ubuntu/git
+      - ~/.bash_history:/home/ubuntu/.bash_history
+      - ~/.mix:/home/ubuntu/.mix
+    command: sleep infinity
+    network_mode: host
+ 
+  db:
+    container_name: selenium-driver
+    image: selenium/standalone-chrome:latest
+    restart: unless-stopped
+    environment:
+      SE_VNC_NO_PASSWORD: 1
+    volumes:
+      - /dev/shm:/dev/shm
+    network_mode: host
