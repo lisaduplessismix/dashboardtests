@@ -13,15 +13,18 @@ services:
       - ../../:/home/ubuntu/git
       - ~/.bash_history:/home/ubuntu/.bash_history
       - ~/.mix:/home/ubuntu/.mix
+    depends_on: 
+      - chrome
     command: sleep infinity
     network_mode: host
  
-  db:
-    container_name: selenium-driver
+  chrome:
     image: selenium/standalone-chrome:latest
-    restart: unless-stopped
+    container_name: chrome
+    hostname: chrome
     environment:
       SE_VNC_NO_PASSWORD: 1
-    volumes:
-      - /dev/shm:/dev/shm
-    network_mode: host
+    shm_size: 2gb
+    restart: always
+    ports:
+      - 4444:4444
