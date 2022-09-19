@@ -8,7 +8,7 @@ RUN \
   && apt-get install -qq -y \
     sudo nano htop build-essential libssl-dev zlib1g-dev libffi-dev libbz2-dev \
     liblzma-dev libkrb5-dev libsqlite3-dev openjdk-8-jdk zip dos2unix maven nodejs \
-    python3.7 python3.7-dev python3.7-distutils \
+    python3.7 python3.7-dev python3.7-distutils jq \
     curl wget git openjdk-8-jdk maven zip apt-transport-https \
   && curl -sL https://deb.nodesource.com/setup_current.x | bash - \
   && apt-get update && apt install -y nodejs \
